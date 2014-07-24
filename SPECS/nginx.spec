@@ -10,8 +10,8 @@
 %global real_name            nginx
 
 Name:              nginx-testcookie
-Version:           1.0.15
-Release:           6.vortex%{?dist}
+Version:           1.5.9
+Release:           1.vortex%{?dist}
 Conflicts:         nginx
 
 Summary:           A high performance web server and reverse proxy server
@@ -220,107 +220,5 @@ fi
 
 
 %changelog
-* Thu Jul 24 2014 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 1.0.15-6.vortex
+* Thu Jul 24 2014 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 1.5.9-1.vortex
 - Add testcookie module.
-
-* Fri Apr 26 2013 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.15-5
-- enable debugging (#956845)
-- trim changelog
-
-* Fri Feb 22 2013 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.15-4
-- make sure nginx directories are not world readable (#913734, #913736)
-
-* Sun Oct 28 2012 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.15-3
-- add nginx man page (#870738)
-- link to official documentation not the community wiki (#870733)
-- default.conf: add "default_server" to the "listen" directive (#842738)
-
-* Mon May 14 2012 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.15-2
-- fix postrotate script in nginx.logrotate (#705264)
-
-* Thu Apr 19 2012 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.15-1
-- update to upstream release 1.0.15
-- CVE-2012-2089 (#812093)
-
-* Thu Mar 15 2012 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.14-1
-- update to upstream release 1.0.14
-- CVE-2012-1180 (#803856)
-
-* Wed Mar 04 2012 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.13-2
-- remove incorrect BR
-
-* Tue Mar 03 2012 Jamie Nguyen <jamielinux@fedoraproject.org> - 1.0.13-1
-- update to upstream release 1.0.13
-- general spec file cleanup to match rawhide (for easier diff), including:
-- replace %%define with %%global
-- amend nginx.init and nginx.conf
-- amend %%pre scriptlet to match with guidelines
-- remove obsolete BuildRoot tag, %%clean section and %%defattr
-- remove various unnecessary commands
-
-* Sun Feb 19 2012 Jeremy Hinegardner <jeremy at hinegardner dot org> - 1.0.12-1
-- Update to 1.0.12
-
-* Thu Dec 14 2011 Keiran "Affix" Smith <fedora@affix.me> - 1.0.10-2
-- Fix Build Issue
-
-* Thu Nov 17 2011 Keiran "Affix" Smith <fedora@affix.me> - 1.0.10-1
-- Bugfix: a segmentation fault might occur in a worker process if resolver got a big DNS response. Thanks to Ben Hawkes.
-- Bugfix: in cache key calculation if internal MD5 implementation wasused; the bug had appeared in 1.0.4.
-- Bugfix: the module ngx_http_mp4_module sent incorrect "Content-Length" response header line if the "start" argument was used. Thanks to Piotr Sikora.
-
-* Thu Oct 27 2011 Keiran "Affix" Smith <fedora@affix.me> - 1.0.8-1
-- Update to new 1.0.8 stable release
-
-* Fri Aug 26 2011 Keiran "Affix" Smith <fedora@affix.me> - 1.0.5-1
-- Update nginx to Latest Stable Release
-
-* Fri Jun 17 2011 Marcela Mašláňová <mmaslano@redhat.com> - 1.0.0-3
-- Perl mass rebuild
-
-* Thu Jun 09 2011 Marcela Mašláňová <mmaslano@redhat.com> - 1.0.0-2
-- Perl 5.14 mass rebuild
-
-* Wed Apr 27 2011 Jeremy Hinegardner <jeremy at hinegardner dot org> - 1.0.0-1
-- Update to 1.0.0
-
-* Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8.53-6
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
-
-* Sun Dec 12 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.8.53.5
-- Extract out default config into its own file (bug #635776)
-
-* Sun Dec 12 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.8.53-4
-- Revert ownership of log dir
-
-* Sun Dec 12 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.8.53-3
-- Change ownership of /var/log/nginx to be 0700 nginx:nginx
-- update init script to use killproc -p
-- add reopen_logs command to init script
-- update init script to use nginx -q option
-
-* Sun Oct 31 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.8.53-2
-- Fix linking of perl module
-
-* Sun Oct 31 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.8.53-1
-- Update to new stable 0.8.53
-
-* Sat Jul 31 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.7.67-2
-- add Provides: webserver (bug #619693)
-
-* Sun Jun 20 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.7.67-1
-- Update to new stable 0.7.67
-- fix bugzilla #591543
-
-* Tue Jun 01 2010 Marcela Maslanova <mmaslano@redhat.com> - 0.7.65-2
-- Mass rebuild with perl-5.12.0
-
-* Mon Feb 15 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.7.65-1
-- Update to new stable 0.7.65
-- change ownership of logdir to root:root
-- add support for ipv6 (bug #561248)
-- add random_index_module
-- add secure_link_module
-
-* Fri Dec 04 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 0.7.64-1
-- Update to new stable 0.7.64
