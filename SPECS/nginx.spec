@@ -40,11 +40,11 @@ Source200:         testcookie-nginx-module-master.tar.gz
 # -D_FORTIFY_SOURCE=2 causing warnings to turn into errors.
 Patch0:     nginx-auto-cc-gcc.patch
 
-BuildRequires:     GeoIP-devel
-BuildRequires:     gd-devel
-BuildRequires:     libxslt-devel
-BuildRequires:     openssl-devel
-BuildRequires:     pcre-devel
+BuildRequires:     GeoIP-devel, libcom_err-devel
+BuildRequires:     gd-devel, keyutils-libs-devel
+BuildRequires:     libxslt-devel, libsepol-devel
+BuildRequires:     openssl-devel, libselinux-devel
+BuildRequires:     pcre-devel, krb5-devel
 BuildRequires:     perl-devel
 BuildRequires:     perl(ExtUtils::Embed)
 BuildRequires:     zlib-devel
