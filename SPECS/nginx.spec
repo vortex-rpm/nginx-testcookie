@@ -68,7 +68,7 @@ memory usage.
 %prep
 %setup -q -n %{real_name}-%{version}
 %patch0 -p0
-tar xf %{Source200}
+tar xf %{SOURCE200}
 
 
 %build
