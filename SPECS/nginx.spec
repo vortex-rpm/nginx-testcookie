@@ -7,7 +7,7 @@
 %global  nginx_datadir       %{_datadir}/nginx
 %global  nginx_webroot       %{nginx_datadir}/html
 
-Name:              nginx
+Name:              nginx-testcookie
 Version:           1.0.15
 Release:           6.vortex%{?dist}
 Conflicts:         nginx
