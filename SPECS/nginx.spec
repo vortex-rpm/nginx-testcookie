@@ -11,7 +11,7 @@
 
 Name:              nginx-testcookie
 Version:           1.5.9
-Release:           1.vortex%{?dist}
+Release:           2.vortex%{?dist}
 Conflicts:         nginx
 
 Summary:           A high performance web server and reverse proxy server
@@ -164,7 +164,7 @@ exit 0
 
 %post
 if [ $1 -eq 1 ]; then
-    /sbin/chkconfig --add %{name}
+    /sbin/chkconfig --add %{real_name}
 fi
 if [ $1 -eq 2 ]; then
     # Make sure these directories are not world readable.
@@ -175,13 +175,13 @@ fi
 
 %preun
 if [ $1 -eq 0 ]; then
-    /sbin/service %{name} stop >/dev/null 2>&1
-    /sbin/chkconfig --del %{name}
+    /sbin/service %{real_name} stop >/dev/null 2>&1
+    /sbin/chkconfig --del %{real_name}
 fi
 
 %postun
 if [ $1 -eq 2 ]; then
-    /sbin/service %{name} upgrade || :
+    /sbin/service %{real_name} upgrade || :
 fi
 
 %files
@@ -220,5 +220,8 @@ fi
 
 
 %changelog
+* Thu Jul 24 2014 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 1.5.9-2.vortex
+- Fix service.
+
 * Thu Jul 24 2014 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 1.5.9-1.vortex
 - Add testcookie module.
