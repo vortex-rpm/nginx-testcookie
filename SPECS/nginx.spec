@@ -7,6 +7,8 @@
 %global  nginx_datadir       %{_datadir}/nginx
 %global  nginx_webroot       %{nginx_datadir}/html
 
+%global real_name            nginx
+
 Name:              nginx-testcookie
 Version:           1.0.15
 Release:           6.vortex%{?dist}
@@ -64,7 +66,7 @@ memory usage.
 
 
 %prep
-%setup -q
+%setup -q -n %{real_name}-%{version}
 %patch0 -p0
 tar xf %{Source200}
 
