@@ -114,8 +114,8 @@ export DESTDIR=%{buildroot}
     --with-mail_ssl_module \
     --with-debug \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
-    --with-ld-opt="-Wl,-E" # so the perl module finds its symbols \
-    --add-module=testcookie-nginx-module-master
+    --add-module=testcookie-nginx-module-master \
+    --with-ld-opt="-Wl,-E" # so the perl module finds its symbols
 
 make %{?_smp_mflags}
 
